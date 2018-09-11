@@ -32,7 +32,7 @@ O que veremos hoje:
 
 Assim como este é o nosso primeiro workshop, o primeiro passo na área de análise de dados é importar as informações nas quais você irá trabalhar, seja para um freela, estágio ou iniciação científica. Porém, existem diversas formas de importar dados e diversos dados que conseguimos importar, como por exemplo, podemos importar dados a partir de links, arquivos, com estruturas diversas e etc.
 
-Esta parte da importação de dados, é o primeiro passo do _Ciclo de Ciência de Dados_ descrito no livro "R for Data Science". Depois de trazer estes arquivos para dentro do ambiente do RStudio, devemos arrumá-los, isto é, verificar se suas estruras estão boas para serem trabalhadas. Este procedimento é chamado de __Data Wrangling__ (será tema do próximo workshop, fiquem ligados!) e é uma parte essencial, uma vez que as nossas perguntas muitas vezes são respondidas depois de manipularmos as bases de dados.
+Esta parte da importação de dados, é o primeiro passo do _Ciclo de Ciência de Dados_ descrito no livro "R for Data Science". Depois de trazer estes arquivos para dentro do ambiente do RStudio, devemos arrumá-los, isto é, verificar se suas estruturas estão boas para serem trabalhadas. Este procedimento é chamado de __Data Wrangling__ (será tema do próximo workshop, fiquem ligados!) e é uma parte essencial, uma vez que as nossas perguntas muitas vezes são respondidas depois de manipularmos as bases de dados.
 
 Mas antes de avançarmos, o que são dados?
 
@@ -42,13 +42,13 @@ Mas antes de avançarmos, o que são dados?
 
 <img src="https://github.com/p4hUSP/workshops_2018.2/blob/master/imgs/w1_14.jpg" class="giphyembed" class="center">
 
-O que são dados? Essa é uma pergunta bem dificíl de responder e talvez traga um discussão muito maior do que podemos imaginar. Para esse workshop, uma respota no [Quora](https://www.quora.com/What-is-data-1) para a mesma pergunta basta:
+O que são dados? Essa é uma pergunta bem difícil de responder e talvez traga uma discussão muito maior do que podemos imaginar. Para esse workshop, uma respota no [Quora](https://www.quora.com/What-is-data-1) para a mesma pergunta basta:
 
 > Data is an abstraction of reality. Raw data is an observation, that  captures some elements of reality. Data can then be aggregated and analysed in a variety of ways.
 
 Esses dados, quando coletados podem vir de diversas formas, porém se queremos analisá-los no R, ou outros softwares, na maioria das vezes teremos que transformar estas informações em tabelas.
 
-Acontece que até mesmo as tabelas podem vir em diversos formatos, como por exemplo, `.txt`, `.sav`, `.csv` e etc; Como podemos importar estes tipos de arquivos no R? Para nossa felicidade, o R fornece algumas formas (que chamaremos de funções) para resolver os nossos problemas. Normalmente estas funções estão relacionadas com o que chamamos de pacotes, que nada mais são que um conjunto de ferramentas que possuem alguma ação, como por exemplo, "abrir arquivo csv", "filtar observação do banco de dados" e assim por diante.
+Acontece que até mesmo as tabelas podem vir em diversos formatos, como por exemplo, `.txt`, `.sav`, `.csv` e etc; Como podemos importar estes tipos de arquivos no R? Para nossa felicidade, o R fornece algumas formas (que chamaremos de funções) para resolver os nossos problemas. Normalmente estas funções estão relacionadas com o que chamamos de pacotes, que nada mais são que um conjunto de ferramentas que possuem alguma ação, como por exemplo, "abrir arquivo csv", "filtrar observação do banco de dados" e assim por diante.
 
 Alguns exemplos de pacotes são os seguintes:
 
@@ -65,9 +65,9 @@ library("cowsay")
 say(what = "Vamos importar dados!", by = "random")
 ```
 
-Toda função tem o que chamamos de parâmetros, que são valores passados para trazer resultados especificos. No exemplo acima, a função `say` pede para escrevermos qual é o parametro "what" e o by. De forma intuitiva a função `say` só funcionará se nós dissermos o que falar ("what") e quem deve falar ("by").
+Toda função tem o que chamamos de parâmetros, que são valores passados para trazer resultados específicos. No exemplo acima, a função `say` pede para escrevermos qual é o parâmetro "what" e o by. De forma intuitiva a função `say` só funcionará se nós dissermos o que falar ("what") e quem deve falar ("by").
 
-Agora é a sua vez! Peça para o mestre Yoda falar "may the force be with you". **Dica**: Escreva o nome do Yoda em minusculo e não esqueça das aspas.
+Agora é a sua vez! Peça para o mestre Yoda falar "may the force be with you". **Dica**: Escreva o nome do Yoda em minúsculo e não esqueça das aspas.
 
 ```{r eval=FALSE}
 say(what = "", by = "")
@@ -124,7 +124,7 @@ w1_05 <- read_sav("/home/nathan/Documentos/Trabalho/P4H/workshops_2018.2/data/w1
 
 Pronto! É assim que se importam dados para o R, muito fácil, não? Vamos para um desafio maior!
 
-Uma das principais diferenças entre o Excel e o R (linguagens de programação em geral) é que o primeiro te mantem preso a uma lógica de como as coisas devem funcionar, enquanto o segundo te permite criar diversas soluções. Um exemplo disso, é o webScraping, que nada mais é que uma forma de extrair dados de sites utilizando códigos.
+Uma das principais diferenças entre o Excel e o R (linguagens de programação em geral) é que o primeiro te mantém preso a uma lógica de como as coisas devem funcionar, enquanto o segundo te permite criar diversas soluções. Um exemplo disso, é o webScraping, que nada mais é que uma forma de extrair dados de sites utilizando códigos.
 
 <a id='webscraping'></a>
 
@@ -168,7 +168,7 @@ node
 class(node)
 ```
 
-Ops! não vimos nada sobre classes aqui, isso é um problema? Não! Não precisa se preocupar, mas é importante entende a que classe pertence o objeto `node`. Ele pertence a duas classes que possuem em comum o termo "xml...", mas o que é isso? Nós não estamos interessados no HTML? 
+Ops! não vimos nada sobre classes aqui, isso é um problema? Não! Não precisa se preocupar, mas é importante entender que à classe pertence o objeto `node`. Ele pertence à duas classes que possuem em comum o termo "xml...", mas o que é isso? Nós não estamos interessados no HTML? 
 
 Acontece que HTML pode ser considerado uma implementação do XML, eles poderiam ser considerados primos! Se você sabe um, você sabe o outro.
 
@@ -178,7 +178,7 @@ Interessante, não? Mas como coletamos as informações? A resposta é simples, 
 
 > "XPath is a language used for locating nodes in XML documents." (Practical Web Scraping for Data Science. BROUCKE & BAESENS, 2018).
 
-Basicamente, o `Xpath` é uma forma de informar onde uma determinada tag (ou um conjunto delas) está. Ficara mais claro quado colocarmos a mão na massa, mas por enquanto vamos nos familizarizar com algumas expressões do Xpath:
+Basicamente, o `Xpath` é uma forma de informar onde uma determinada tag (ou um conjunto delas) está. Ficará mais claro quado colocarmos a mão na massa, mas por enquanto vamos nos familizarizar com algumas expressões do Xpath:
 
 
 - "/" selects from the root node;
@@ -253,7 +253,7 @@ u0 <- "https://www.nexojornal.com.br/tags/Temas/Economia"
 
 ## Salvando arquivos.
 
-Depois que nós importamos os dados e darmos continuidado ao ciclo da Ciência de Dados, podemos salvá-los para, por exemplo, não precisar refazer todas mudanças já feitas. E é muito simples fazer isso, basta que utilizamos o prefixo `write_`, seguido da tabela que queremos salvar e o nome do arquivo que ela será salva (obs: não pode esquecer da extensão do arquivo, por exemplo ".csv"):
+Depois que nós importamos os dados e dermos continuidade ao ciclo da Ciência de Dados, podemos salvá-los para, por exemplo, não precisar refazer todas mudanças já feitas. E é muito simples fazer isso, basta que utilizamos o prefixo `write_`, seguido da tabela que queremos salvar e o nome do arquivo que ela será salva (obs: não pode esquecer da extensão do arquivo, por exemplo ".csv"):
 
 ```{r eval = FALSE}
 write_csv(nexo, "tabela_nexo.csv")

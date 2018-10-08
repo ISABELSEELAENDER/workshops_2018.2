@@ -5,7 +5,7 @@ output: html_document
 
 ## Introdução
 
-As visualizações gráficas são muito importantes para transmitir informações. Podemos dizer até que ela é fundamental para análise de dados, nos ajudando a responder questões, tomar decisões, contar histórias e até mesmo inspirar. Veremos como fazer criar essas visualizações utilizando dados do Spotify sobre a melhor banda do mundo:
+A visualização gráfica é muito importante para transmitir informações. Podemos dizer até que ela é fundamental para análise de dados, nos ajudando a responder questões, tomar decisões, contar histórias e até mesmo inspirar. Veremos como fazer criar essas visualizações utilizando dados do Spotify sobre a melhor banda do mundo:
 
 ```{r}
 knitr::include_graphics("https://github.com/p4hUSP/workshops_2018.2/blob/master/imgs/w3_01.jpeg")
@@ -31,15 +31,15 @@ Vamos utilizar a função `glimpse()` para ver a estrutura do nosso banco de dad
 glimpse(data)
 ```
 
-Perceba que cada observação da nossa base de dados é uma música e que cada uma delas possuem métricas, como por exemplo, "danceability", "instrumentalness" e entre outros. Para sabermos o que significa cada uma dessas informações podemos acessar este [link](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/).
+Perceba que cada observação da nossa base de dados é uma música e que cada uma delas possui métricas, como por exemplo, "danceability", "instrumentalness", entre outros. Para sabermos o que significa cada uma dessas informações podemos acessar este [link](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/).
 
-Ao longo da carreira, os Beatles lançaram 13 albuns de estúdio, vamos verificar quantas músicas cada album tem.
+Ao longo da carreira, os Beatles lançaram 13 álbuns de estúdio, vamos verificar quantas músicas cada álbum tem.
 
 ```{r}
 count(data, album_name)
 ```
 
-Percebam que dois albuns possuem apenas uma música, o "A Hard Days Night" e o "Sgt. Peppers Lonely Hearts Club Band". Para praticarmos vamos então filtrar as observações diferentes destes albuns.
+Percebam que dois álbuns possuem apenas uma música, o "A Hard Days Night" e o "Sgt. Peppers Lonely Hearts Club Band". Para praticarmos vamos então filtrar as observações diferentes destes albuns.
 
 ```{r}
 # Filtro
@@ -52,9 +52,9 @@ album_musicas <- count(data_clean, album_name)
 album_musicas
 ```
 
-Qual é o album com uma maior quantidade de músicas? E o segundo? O terceiro? 
+Qual é o álbum com uma maior quantidade de músicas? E o segundo? E o terceiro? 
 
-Qual é a média de "danceability" para cada album?
+Qual é a média de "danceability" para cada álbum?
 
 ```{r}
 temp1 <- group_by(data_clean, album_name)
@@ -64,15 +64,15 @@ dance_album <- summarise(temp1, mean_danceability = mean(danceability, na.rm = T
 dance_album
 ```
 
-Perceba que se trocassemos a visualização das tabelas por gráficos, a resposta para estás perguntas ficariam muito mais fáceis de se responder. Para isso vamos introduzir o `ggplot2`.
+Perceba que se trocássemos a visualização das tabelas por gráficos, as respostas para estás perguntas ficariam muito mais fáceis de se responder. Para isso vamos introduzir o `ggplot2`.
 
 # `ggplot2`
 
-O ggplot2 é um pacote baseado no que se chamou Grammar of Graphics (por isso gg antes do plot2), que nada mais é do que uma estrutura (framework) para realização de gráficos, que nós também chamamos de "plot". Além disso, o Grammar of Graphics tem o seguinte principio:
+O ggplot2 é um pacote baseado no que se chamou Grammar of Graphics (por isso gg antes do plot2), que nada mais é do que uma estrutura (framework) para realização de gráficos, que nós também chamamos de "plot". Além disso, o Grammar of Graphics tem o seguinte princípio:
 
 > Gráficos são construídos com diferentes **layers**
 
-Mas o que são **layers**? Layers são elementos (ou componentes) gramáticais utilizados para fazer um plot. Estes componentes são importantes para determinar a representação dos dados. Como o Hadley Wickham apontou em um artigo chamado "A layered grammar of graphics" (2010), a associação destes layers com uma certa grámatica auxilia o usuário em atualizar e contruir gráficos com uma facilidade maior.
+Mas o que são **layers**? Layers são elementos (ou componentes) gramáticais utilizados para fazer um plot. Estes componentes são importantes para determinar a representação dos dados. Como o Hadley Wickham apontou em um artigo chamado "A layered grammar of graphics" (2010), a associação destes layers com uma certa grámatica auxilia o usuário a atualizar e construir gráficos com uma facilidade maior.
 
 Os elementos gramáticais que temos no `ggplot2` são:
 
@@ -82,7 +82,7 @@ b. Aesthetics - A escala em que o dado será plotado, sinalizando os eixos x e y
 
 c. Geom - Estrutura que será utilizada nos seus dados, como por exemplo, gráfico de dispersão, linha, boxplot e etc.
 
-d. Facets - plotar multiplos grupos
+d. Facets - Plotar múltiplos grupos
 
 e. Stats - Transformações estatísticas
 
